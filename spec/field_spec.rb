@@ -90,6 +90,7 @@ describe Csvlint::Field do
       expect(field.validate_column("42.0")).to be(true)
       expect(field.validate_column("42")).to be(true)
       expect(field.validate_column("forty-two")).to be(false)
+      expect(field.validate_column("42 is forty-two")).to be(false)
     end
 
     it "validates URIs" do
